@@ -1,4 +1,4 @@
-import { BootGameState } from './gameStates/bootGameState';
+import { PlayGameState } from './gameStates/playGameState';
 import { AsteroidsManager } from './components/asteroids/asteroidsManager';
 import { Vector2D } from './vector2d';
 import * as ConfigData from '../assets/config.json' 
@@ -77,7 +77,7 @@ export class AsteroidsGame {
     this.asteroidsManager=new AsteroidsManager(this)
     
     // Initialise GameState
-    this.gameState=new BootGameState(this);
+    this.gameState=new PlayGameState(this);
     
   };
 
@@ -87,16 +87,16 @@ export class AsteroidsGame {
 
   public keyPressed = () => {
     const key=this._keyMapper.get(this._ge.keyCode);
-    // this.gameState.handleKeyPress(key)
+    this.gameState.handleKeyPress(key)
   };
 
   public keyReleased = () => {
     const key=this._keyMapper.get(this._ge.keyCode);
-    // this.gameState.handleKeyRelease(key)
+    this.gameState.handleKeyRelease(key)
   };
 
   public mouseClicked=() => {
-    // this.gameState.handleKeyMouseClick()
+    this.gameState.handleKeyMouseClick()
   }
 
   public gameLoop = () => {

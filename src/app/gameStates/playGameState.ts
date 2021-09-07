@@ -1,6 +1,6 @@
 import { GameStateBase } from "../shared/gameStates/base/gameStateBase";
 
-export class BootGameState extends GameStateBase {
+export class PlayGameState extends GameStateBase {
 
     public setup() {
         this.gameEngine.asteroidsManager.createAsteroidsField(10);
